@@ -1,0 +1,23 @@
+diff --git a/git-logger.sh b/git-logger.sh
+index d2754a0..da328d4 100755
+--- a/git-logger.sh
++++ b/git-logger.sh
+@@ -9,7 +9,17 @@
+ # Apparently it is faster to grep a text file than piping greps in a chain.
+ #
+
+-days=' '$(date -d monday +%a)' '$(date -d tuesday +%a)' '$(date -d wednesday +%a)' '$(date -d thursday +%a)' '$(date -d friday +%a)' '$(date -d saturday +%a)' '$(date -d sunday +%a)' ' # this should work for international system locales
++# ============================================================================
++# ENVIRONMENT
++# https://gist.github.com/boweeb/25b3d64319677fac92c8d7fe61ac2049#file-git-logger-sh-L34-L46
++
++if [[ "${OSTYPE}" == darwin* ]]; then
++    # brew install coreutils grep
++    _date="gdate"
++elif [[ "${OSTYPE}" == linux* ]]; then
++    _date="date"
++fi
++days=' '$($_date -d monday +%a)' '$($_date -d tuesday +%a)' '$($_date -d wednesday +%a)' '$($_date -d thursday +%a)' '$($_date -d friday +%a)' '$($_date -d saturday +%a)' '$($_date -d sunday +%a)' ' # this should work for international system locales
+
+ hours='01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 00'
+ colors=(19 21 23 25 27 30 36 39 41 49 51 154 178 172 166 202 196)
