@@ -1,11 +1,11 @@
 diff --git a/git-logger.sh b/git-logger.sh
-index d2754a0..c235e76 100755
+index d2754a0..da328d4 100755
 --- a/git-logger.sh
 +++ b/git-logger.sh
-@@ -9,7 +9,20 @@
+@@ -9,7 +9,17 @@
  # Apparently it is faster to grep a text file than piping greps in a chain.
  #
- 
+
 -days=' '$(date -d monday +%a)' '$(date -d tuesday +%a)' '$(date -d wednesday +%a)' '$(date -d thursday +%a)' '$(date -d friday +%a)' '$(date -d saturday +%a)' '$(date -d sunday +%a)' ' # this should work for international system locales
 +# ============================================================================
 +# ENVIRONMENT
@@ -14,65 +14,10 @@ index d2754a0..c235e76 100755
 +if [[ "${OSTYPE}" == darwin* ]]; then
 +    # brew install coreutils grep
 +    _date="gdate"
-+    _grep="ggrep"
 +elif [[ "${OSTYPE}" == linux* ]]; then
 +    _date="date"
-+    _grep="grep"
 +fi
-+
 +days=' '$($_date -d monday +%a)' '$($_date -d tuesday +%a)' '$($_date -d wednesday +%a)' '$($_date -d thursday +%a)' '$($_date -d friday +%a)' '$($_date -d saturday +%a)' '$($_date -d sunday +%a)' ' # this should work for international system locales
- 
+
  hours='01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 00'
  colors=(19 21 23 25 27 30 36 39 41 49 51 154 178 172 166 202 196)
-@@ -28,11 +41,11 @@ function find_max {
-   for day in $days; do
- 
-     # save another text file containing the filtered commits submitted on $day.
--    grep "$day" "$tmp_file" > "$tmp_file_2"
-+    $_grep "$day" "$tmp_file" > "$tmp_file_2"
- 
-     for hour in $hours; do
-       # search "tmp_file" file for commits submitted at $hour
--      number_hourly_commits=$(grep -c "$hour" "$tmp_file_2")
-+      number_hourly_commits=$($_grep -c "$hour" "$tmp_file_2")
- 
-       if [ "$number_hourly_commits" -gt "$max_hourly_commit" ]
-         then
-@@ -59,14 +72,14 @@ function 256_color_display {
- 
-   for day in $days; do
-     printf "\n%s" " $day -"
--   
--    grep "$day" "$tmp_file" > "$tmp_file_2" # save another text file containing the filtered commits submitted on $day.
-+
-+    $_grep "$day" "$tmp_file" > "$tmp_file_2" # save another text file containing the filtered commits submitted on $day.
- 
-     for hour in $hours; do
--     
--      number_hourly_commits=$(grep -c "$hour" "$tmp_file_2") # search "tmp_file_2" file for commits submitted at $hour
-+
-+      number_hourly_commits=$($_grep -c "$hour" "$tmp_file_2") # search "tmp_file_2" file for commits submitted at $hour
-       color=$(tput setab "${colors[$((16*number_hourly_commits/(max_hourly_commit)))]}") # colorize a given color array index given by 16*$number_hourly_commits/($max_hourly_commit)
--     
-+
-       if [ "$number_hourly_commits" -eq 0 ]; then  # print for 0 commits
-         printf "%s" "  $number_hourly_commits " #  do not colorize
-       elif [ "$number_hourly_commits" -lt 1000 ]; then
-@@ -90,10 +103,10 @@ function 8_color_display {
- 
-   for day in $days; do
-     printf "\n%s" " $day -"
--    grep "$day" "$tmp_file" > "$tmp_file_2" # save a text file containing the commits submitted on $day
-+    $_grep "$day" "$tmp_file" > "$tmp_file_2" # save a text file containing the commits submitted on $day
- 
-     for hour in $hours; do
--      number_hourly_commits=$(grep -c "$hour" "$tmp_file_2") # search "tmp_file" file for commits submitted at $hour
-+      number_hourly_commits=$($_grep -c "$hour" "$tmp_file_2") # search "tmp_file" file for commits submitted at $hour
- 
-       if [ "$number_hourly_commits" -eq 0 ]; then
-         printf "%s" "  $number_hourly_commits " #  do not colorize
-@@ -127,4 +140,3 @@ fi
- #clean up
- rm "$tmp_file"
- rm "$tmp_file_2"
--
