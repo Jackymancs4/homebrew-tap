@@ -11,13 +11,11 @@ class GitLogger < Formula
     end
 
     def install
-
       # Create extension-less executable
       FileUtils.cp("#{buildpath}/git-logger.sh", "#{buildpath}/git-logger")
 
       # Install executable
       bin.install "#{buildpath}/git-logger"
-
     end
 
     test do
