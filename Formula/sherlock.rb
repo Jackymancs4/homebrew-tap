@@ -3,7 +3,7 @@ class Sherlock < Formula
 
   version '0.99.0-1'
   url 'https://github.com/Jackymancs4/sherlock/archive/4e04e122a0756e8f4839e79a77cbdbcf4d42453c.zip'
-  sha256 "00473ce74c5aab0c77cb1dc1517ac19f763a16bf941f799cbf85d908e40759fa"
+  sha256 '00473ce74c5aab0c77cb1dc1517ac19f763a16bf941f799cbf85d908e40759fa'
 
   depends_on 'python'
 
