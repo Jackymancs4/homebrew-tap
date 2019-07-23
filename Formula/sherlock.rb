@@ -2,7 +2,8 @@ class Sherlock < Formula
     include Language::Python::Virtualenv
 
     version "0.99.0-1"
-    url "https://github.com/sherlock-project/sherlock/archive/master.zip"
+    url "https://github.com/Jackymancs4/sherlock/archive/4e04e122a0756e8f4839e79a77cbdbcf4d42453c.zip"
+    # sha256 ""
 
     depends_on "python"
 
