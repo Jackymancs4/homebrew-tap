@@ -2,7 +2,7 @@ class GitLogger < Formula
   desc 'a punch-card for git'
   homepage 'https://gitlab.com/CrazyBaboon/git-logger'
   url 'https://gitlab.com/CrazyBaboon/git-logger/-/archive/400371a6a4d406fdcdfa6996a801092afe275e7f/git-logger-400371a6a4d406fdcdfa6996a801092afe275e7f.tar.gz'
-  version '0.99.0-1'
+  version '0.99.0-2'
   sha256 '1a0db52752b10020722459299ba7f3169efd2d7db709902004b790032d5510d1'
 
   patch do
