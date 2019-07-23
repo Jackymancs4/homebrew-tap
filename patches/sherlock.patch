@@ -8,6 +8,8 @@ index 0000000..05d2d25
 +
 +if [ -f "$(brew --prefix sherlock)"/libexec/bin/activate ]; then
 +    source "$(brew --prefix sherlock)"/libexec/bin/activate
++    python3 "$(brew --prefix sherlock)"/sherlock.py $0
++else
++    python3 sherlock.py $0
 +fi
 +
-+python3 sherlock.py $0
