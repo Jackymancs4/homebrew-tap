@@ -1,15 +1,14 @@
 diff --git a/sherlock b/sherlock
 new file mode 100755
-index 0000000..05d2d25
+index 0000000..545743e
 --- /dev/null
 +++ b/sherlock
-@@ -0,0 +1,7 @@
+@@ -0,0 +1,8 @@
 +#!/bin/bash
 +
 +if [ -f "$(brew --prefix sherlock)"/libexec/bin/activate ]; then
 +    source "$(brew --prefix sherlock)"/libexec/bin/activate
 +    python3 "$(brew --prefix sherlock)"/sherlock.py $0
 +else
-+    python3 sherlock.py $0
++    python3 sherlock.py $@
 +fi
-+
