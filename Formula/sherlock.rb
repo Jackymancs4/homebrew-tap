@@ -8,8 +8,8 @@ class Sherlock < Formula
   depends_on 'python'
 
   patch do
-    url 'https://raw.githubusercontent.com/Jackymancs4/homebrew-tap/4fb5df27f8e1d6fe3e28ba66a5f5092905800ff9/patches/sherlock.patch'
-    sha256 '12c20d5eda9fd2d0e0cf059c79e716fc8f5d8505b7200d83dbf207c19a831e34'
+    url 'https://raw.githubusercontent.com/Jackymancs4/homebrew-tap/f78675ab6b1024d20e4aa7459c5d2cf32533e796/patches/sherlock.patch'
+    sha256 '8b962252264d172b7124363e2009027b327b458bec94451640215633f892b52a'
   end
 
   def install
