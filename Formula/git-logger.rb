@@ -3,7 +3,7 @@ class GitLogger < Formula
     homepage "https://gitlab.com/CrazyBaboon/git-logger"
     url "https://gitlab.com/CrazyBaboon/git-logger/-/archive/400371a6a4d406fdcdfa6996a801092afe275e7f/git-logger-400371a6a4d406fdcdfa6996a801092afe275e7f.tar.gz"
     version "0.99.0-1"
-    sha256 "8b900e78599230305e943488330d949a5a1c76b55f478225fe8bef04654723e8"
+    sha256 "1a0db52752b10020722459299ba7f3169efd2d7db709902004b790032d5510d1"
 
     patch do
       url "https://raw.githubusercontent.com/Jackymancs4/homebrew-tap/12a0eeea9aa4927e05f5658d07c6b13d8bcec607/patches/git-logger.patch"
