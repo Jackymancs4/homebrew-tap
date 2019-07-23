@@ -20,11 +20,11 @@ class Sherlock < Formula
 
         venv.pip_install requirements_list
 
-        venv.pip_install_and_link "#{buildpath}/sherlock.py"
+        prefix.install "#{buildpath}/sherlock", "#{buildpath}/sherlock.py", "#{buildpath}/load_proxies.py", "#{buildpath}/site_list.py", "#{buildpath}/data.json"
 
-        FileUtils.cp("#{buildpath}/sherlock.py", "#{buildpath}/sherlock")
+        # venv.pip_install_and_link buildpath
 
-      bin.install_symlink "sherlock.py"
+        bin.install "#{prefix}/sherlock"
 
     end
   end
