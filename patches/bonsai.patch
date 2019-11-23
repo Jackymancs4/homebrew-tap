@@ -1,0 +1,13 @@
+diff --git a/bonsai.sh b/bonsai.sh
+index cee904d..ecff2ae 100755
+--- a/bonsai.sh
++++ b/bonsai.sh
+@@ -379,7 +379,7 @@ init() {
+
+ 	# setup temp file for caching times of each growth
+ 	mkdir -p /tmp/bonsai.sh
+-	tmpFile="$(mktemp -p /tmp/bonsai.sh bonsai.sh.XXXXXXXX)"
++	tmpFile="$(mktemp /tmp/bonsai.sh/XXXXXXXX)"
+ }
+
+ grow() {
