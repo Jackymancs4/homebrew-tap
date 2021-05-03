@@ -1,5 +1,5 @@
 class Put < Formula
-  desc "A pretty text printer."
+  desc "Pretty text printer"
   homepage "https://github.com/Unlimiter/put"
   url "https://github.com/Unlimiter/put/archive/v2.0.14-a.0.tar.gz"
   version "2.0.14-a0-1"
