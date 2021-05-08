@@ -36,14 +36,6 @@ class Sit < Formula
     end
   end
 
-  devel do
-    url "https://github.com/sit-fyi/sit/archive/v0.4.1.tar.gz"
-    sha256 "ff78edeaf6e1831d0063e000209aed5d9d76461c455b3e7b4f3fb1dda9117cff"
-
-    depends_on "rust" => :build
-    depends_on "cmake" => :build
-  end
-
   head do
     url "https://github.com/sit-fyi/sit"
 
@@ -52,7 +44,7 @@ class Sit < Formula
   end
 
   def install
-    if build.devel? || build.head?
+    if build.head?
 
       system "cargo", "install", *std_cargo_args
 
