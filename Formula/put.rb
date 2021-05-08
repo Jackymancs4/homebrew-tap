@@ -4,7 +4,8 @@ class Put < Formula
   url "https://github.com/Unlimiter/put/archive/v2.0.14-a.0.tar.gz"
   version "2.0.14-a0-1"
   sha256 "075654786b48e03e07087d9c794733a3d37dc8cd00b598e8abf93339b1e7789c"
-  # depends_on "cmake" => :build
+
+  depends_on "make" => :build
 
   def install
     # Generate binary

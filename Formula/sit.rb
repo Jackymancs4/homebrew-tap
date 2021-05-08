@@ -54,7 +54,7 @@ class Sit < Formula
   def install
     if build.devel? || build.head?
 
-      system "cargo", "build", "--release"
+      system "cargo", "install", *std_cargo_args
 
       bin.install "#{buildpath}/target/release/sit"
       bin.install "#{buildpath}/target/release/sit-web"
@@ -63,9 +63,9 @@ class Sit < Formula
 
       resource("sit").stage do
         if OS.mac?
-          system "mv", "sit-x86_64-macosx", "sit"
+          mv("sit-x86_64-macosx", "sit")
         elsif OS.linux?
-          system "mv", "sit-x86_64-linux", "sit"
+          mv("sit-x86_64-linux", "sit")
         end
 
         bin.install "sit"
@@ -73,9 +73,9 @@ class Sit < Formula
 
       resource("sit-web").stage do
         if OS.mac?
-          system "mv", "sit-web-x86_64-macosx", "sit-web"
+          mv("sit-web-x86_64-macosx", "sit-web")
         elsif OS.linux?
-          system "mv", "sit-web-x86_64-linux", "sit-web"
+          mv("sit-web-x86_64-linux", "sit-web")
         end
 
         bin.install "sit-web"

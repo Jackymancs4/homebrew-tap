@@ -1,7 +1,9 @@
 class Sherlock < Formula
   include Language::Python::Virtualenv
 
-  url "https://github.com/Jackymancs4/sherlock/archive/4e04e122a0756e8f4839e79a77cbdbcf4d42453c.zip"
+  desc "Hunt down social media accounts by username across social networks"
+  homepage "https://github.com/sherlock-project/sherlock"
+  url "https://github.com/Jackymancs4/sherlock/archive/4e04e122a0756e8f4839e79a77cbdbcf4d42453c.tgz"
   version "0.99.0-1"
   sha256 "00473ce74c5aab0c77cb1dc1517ac19f763a16bf941f799cbf85d908e40759fa"
 

@@ -22,7 +22,7 @@ class Bonsai < Formula
 
   def install
     # Create extension-less executable
-    FileUtils.cp("#{buildpath}/bonsai.sh", "#{buildpath}/bonsai")
+    cp("#{buildpath}/bonsai.sh", "#{buildpath}/bonsai")
 
     # Install executable
     bin.install "#{buildpath}/bonsai"
