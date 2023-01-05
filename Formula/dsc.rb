@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class Dsc < Formula
-  desc "Fancy terminal browser for the Gemini protocol"
+  desc "Docpell command line interface"
   homepage "https://github.com/docspell/dsc"
   url "https://github.com/docspell/dsc/archive/refs/tags/v0.9.0.tar.gz"
-  version "0.9.0"
   sha256 "d9fc1cb4c02c74bb741a238c2ec94f19cadee1ce62b6d29c9f12e548641dd7f0"
   license "GPL-3.0"
   revision 1

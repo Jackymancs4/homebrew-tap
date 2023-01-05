@@ -4,7 +4,6 @@ class Amfora < Formula
   desc "Fancy terminal browser for the Gemini protocol"
   homepage "https://github.com/makeworld-the-better-one/amfora"
   url "https://github.com/makeworld-the-better-one/amfora/archive/v1.7.1.tar.gz"
-  version "1.7.1"
   sha256 "55a2d98e438ed3d41ad6bae6b4e04348a04e28a279fdc09866a1fdd5ee91d3ec"
   license "GPL-3.0"
   revision 1

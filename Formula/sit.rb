@@ -3,7 +3,6 @@
 class Sit < Formula
   desc "Serverless (offline-first, merge-friendly) Information Tracker"
   homepage "https://sit.fyi/"
-  version "0.4.1"
 
   stable do
     url "https://github.com/sit-fyi/sit/archive/v0.4.1.tar.gz"
@@ -11,7 +10,7 @@ class Sit < Formula
 
     if OS.mac?
 
-      resource "sit" do
+      resource "sit-bin" do
         url "https://github.com/sit-fyi/sit/releases/download/v0.4.1/sit-x86_64-macosx"
         sha256 "c3a03144bb0d05dc127adbb140c19357d38def5f0c802b3e64a49d0817c94b2c"
       end
@@ -23,7 +22,7 @@ class Sit < Formula
 
     elsif OS.linux?
 
-      resource "sit" do
+      resource "sit-bin" do
         url "https://github.com/sit-fyi/sit/releases/download/v0.4.1/sit-x86_64-linux"
         sha256 "9bff6077a578a221fd0135bb415737299cc1ed542df25c29bfdce83971b13e5b"
       end
@@ -53,7 +52,7 @@ class Sit < Formula
 
     else
 
-      resource("sit").stage do
+      resource("sit-bin").stage do
         if OS.mac?
           mv("sit-x86_64-macosx", "sit")
         elsif OS.linux?
