@@ -17,16 +17,14 @@ class Amfora < Formula
   depends_on "go" => :build
 
   def install
-    def applications
-      share / "applications"
-    end
-
     if build.head?
       system "make"
       system "make", "install"
     else
       system "go", "build", "-o", "bin/amfora"
       bin.install "bin/amfora"
+
+      applications = -> { share / "applications" }
       applications.install "amfora.desktop"
     end
   end
