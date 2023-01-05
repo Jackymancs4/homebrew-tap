@@ -17,7 +17,6 @@ class Dsc < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    # system "cargo", "build", "--release"
     system "strip", "target/release/dsc"
 
     bin.install "target/release/dsc"
