@@ -23,6 +23,6 @@ class Dsc < Formula
   end
 
   test do
-    assert_equal shell_output("#{bin}/dsc -v").chomp, "dsc"
+    assert_equal shell_output("#{bin}/dsc -v").chomp, "dsc #{version}"
   end
 end
