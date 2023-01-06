@@ -10,7 +10,6 @@ class Dsc < Formula
 
   head do
     url "https://github.com/docspell/dsc.git"
-    depends_on "rust" => :build
   end
 
   depends_on "rust" => :build
@@ -23,6 +22,6 @@ class Dsc < Formula
   end
 
   test do
-    assert_equal shell_output("#{bin}/dsc -v").chomp, "dsc #{version}"
+    assert_equal shell_output("#{bin}/dsc -V").chomp, "dsc #{version}"
   end
 end
