@@ -10,20 +10,18 @@ class Dsc < Formula
 
   head do
     url "https://github.com/docspell/dsc.git"
-    depends_on "rust" => :build
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
-    # system "cargo", "build", "--release"
     system "strip", "target/release/dsc"
 
     bin.install "target/release/dsc"
   end
 
   test do
-    assert_equal shell_output("#{bin}/dsc -v").chomp, "dsc"
+    assert_equal shell_output("#{bin}/dsc -V").chomp, "dsc #{version}"
   end
 end
